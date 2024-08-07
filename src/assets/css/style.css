@@ -1,0 +1,286 @@
+body {
+    font-family: sans-serif;
+    min-height: 100vh;
+    /* background: linear-gradient(270deg, #FF5401 0%, #FFCF77 100%);*/
+
+    background-color: #ffffff;
+    margin: 0;
+}
+
+header {
+    font-family: 'Inter';
+    background: linear-gradient(270deg, #FF5401 0%, #FFCF77 100%);
+    border: 0;
+    width: 100%;
+    height: 111px;
+    flex-shrink: 0;
+    margin-bottom: 50px;
+}
+
+header a {
+    float: left;
+    margin: 5px 0;
+    height: 75px;
+    position: relative;
+    width: 50px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    max-width: 1366px;
+    position: relative;
+    transition: width .2s ease;
+    width: calc(100% - 40px);
+}
+
+.content button {
+    color: #FF5401;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    font-family: 'Inter';
+    font-size: 18px;
+    width: 150px;
+    height: 60px;
+    border: transparent;
+    border-radius: 14px;
+    background-color: white;
+    padding-left: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave ao zoom */
+}
+
+.content button:hover {
+    transform: scale(1.08);
+}
+
+.content button img {
+    width: 35px;
+    height: 35px; 
+    margin-right: 8px;
+    margin-left: 8px;
+    transition: opacity 0.3s ease;
+}
+
+
+.content a {
+    text-decoration: none; 
+    color: #FF5401;
+    width: 150px;
+}
+
+.content button img {
+    width: 35px;
+    height: 35px; 
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    border-radius: 1px;
+    padding: 3px;
+    position: absolute;
+    right: 1px;
+    gap: 10px;
+    text-align: center;
+    top: 20px;
+}
+
+.nav-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-header p {
+    margin-top: 37px;
+    font-size: 24px;
+    font-family: 'Inter';
+    color: #FF5401;
+}
+
+.nav-logo {
+    height: 52px;
+    width: 50px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+.container {
+    color: #FF5401;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.container h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    width: 320px;
+    margin: 10px auto 20px auto;
+    text-align: center;
+}
+
+#contactForm input {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contactForm button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 240px;
+    margin-top: 10px;
+    justify-content: flex-start; 
+    font-family: 'Inter';
+    color: #FF5401;
+    font-size: 18px;
+    width: 150px;
+    height: 60px;
+    border: solid 1px #FF5401;
+    border-radius: 14px;
+    background-color: #ffffff;
+    padding-left: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+
+#contactForm button img {
+    width: 35px;
+    height: 35px; 
+    margin-right: 8px;
+    margin-left: 8px;
+    transition: opacity 0.3s ease;
+}
+
+#contactForm button:hover img {
+    content: url("../images/save-white.svg");
+}
+
+#contactForm button:hover {
+    background-color: #FF5401;
+    color: #eee;
+}
+
+
+#contactList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#contactList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#contactList button {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contactList button:hover {
+    background-color: #da190b;
+}
+
+/* Estilos para o modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+/* Estilos para o popup */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Certifique-se de que o popup esteja acima de outros elementos */
+}
+
+.hidden {
+    display: none; /* Esconde o popup quando não está em uso */
+}
+
+#createContactForm input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#createContactForm button {
+    margin: 10px 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#createContactForm button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#createContactForm button[type="button"] {
+    background-color: #f44336;
+    color: white;
+}
+
+#contactList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#contactList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}

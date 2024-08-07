@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Gerenciador de Contatos</title>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <a class="nav-header">
+                <img class="nav-logo" src="../assets/images/logo.png" alt="Logo">
+                <p>Contatos</p>
+            </a>
+            <div class="buttons">
+                <a href="../pages/list.html">
+                    <button>
+                    <img src="../assets/images/list.svg" alt="list">Lista de Contatos
+                    </button>
+                </a>
+                <a href="../public/index.html" class="img2">
+                    <button><img src="../assets/images/new.svg" alt="new">Criar Contato</button>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Gerenciador de Contatos</h1>
+            <p>Centralize, organize e acesse seus contatos facilmente!</p>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Nome" required>
+                <input type="tel" id="phone" placeholder="Telefone" required>
+                <button type="submit"><img src="../assets/images/save.svg" alt="save" class="imgAdd">Adicionar</button>
+            </form>
+        </div>
+    </main>
+    <script src="../js/app.js"></script>
+</body>
+</html>
