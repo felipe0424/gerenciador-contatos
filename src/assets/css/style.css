@@ -1,21 +1,25 @@
 body {
     font-family: sans-serif;
     min-height: 100vh;
-    /* background: linear-gradient(270deg, #FF5401 0%, #FFCF77 100%);*/
+    background: linear-gradient(270deg, #FF5401 0%, #FFCF77 100%);
 
-    background-color: #ffffff;
     margin: 0;
 }
 
 header {
     font-family: 'Inter';
-    background: linear-gradient(270deg, #FF5401 0%, #FFCF77 100%);
     border: 0;
-    width: 100%;
-    height: 111px;
+    width: 95%;
+    height: 17vh;
     flex-shrink: 0;
-    margin-bottom: 50px;
+    position: relative;
+    margin: 30px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade com navegadores WebKit */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: sombra sutil para maior definição */
 }
+
 
 header a {
     float: left;
@@ -27,17 +31,15 @@ header a {
 
 main {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente, se necessário */
+    min-height: 50vh; /* Garante que o conteúdo seja centralizado verticalmente */
 }
 
 .content {
-    box-sizing: border-box;
-    display: block;
-    margin: 0 auto;
-    max-width: 1366px;
-    position: relative;
-    transition: width .2s ease;
-    width: calc(100% - 40px);
+    display: flex;
+
+
 }
 
 .content button {
@@ -51,11 +53,11 @@ main {
     height: 60px;
     border: transparent;
     border-radius: 14px;
-    background-color: white;
     padding-left: 10px;
     text-align: left;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Adiciona uma transição suave ao zoom */
+    transition: transform 0.3s ease;
+    background: transparent;
 }
 
 .content button:hover {
@@ -121,8 +123,8 @@ main {
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    max-width: 400px;
+    justify-content: center;
+    width: 500px;
     border-radius: 10px;
     padding: 20px;
 }
@@ -144,21 +146,78 @@ p {
     text-align: center;
 }
 
+
+/* Centraliza o formulário no contêiner */
+#contactForm {
+    width: 100%; 
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 10px; 
+    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+    border-radius: 10px; /* Adiciona bordas arredondadas ao formulário */
+    background-color: white; 
+}
+
+#contactForm button {
+    display: block; /* Faz com que o botão se comporte como um bloco para centralizar */
+    width: auto; /* Ajusta a largura do botão conforme o conteúdo */
+    margin: 20px auto; /* Centraliza horizontalmente e adiciona espaçamento acima e abaixo */
+    font-family: 'Inter';
+    color: #FF5401;
+    font-size: 18px;
+    height: 60px;
+    border: solid 1px #FF5401;
+    border-radius: 14px;
+    background-color: #ffffff;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+#contactForm button img {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+    margin-left: 8px;
+    transition: opacity 0.3s ease;
+}
+
+#contactForm button:hover img {
+    content: url("../images/save-white.svg");
+}
+
+#contactForm button:hover {
+    background-color: #FF5401;
+    color: #ffffff;
+}
+
 #contactForm input {
-    width: 95%;
+    width: 450px;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #FF5401;
+    border-radius: 7px;
+}
+
+#contactForm input:focus {
+    border-width: 2px;
+    outline: none; /* Remove a borda padrão do navegador ao focar */
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.popup-content button {
+    width: auto;
 }
 
 #contactForm button {
     display: flex;
     align-items: center;
-    position: relative;
-    left: 240px;
+    position: relative center;
     margin-top: 10px;
-    justify-content: flex-start; 
     font-family: 'Inter';
     color: #FF5401;
     font-size: 18px;
@@ -168,7 +227,6 @@ p {
     border-radius: 14px;
     background-color: #ffffff;
     padding-left: 10px;
-    text-align: left;
     cursor: pointer;
 }
 
@@ -189,11 +247,11 @@ p {
     color: #eee;
 }
 
-
-#contactList {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
+#contactList li img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
 #contactList li {
@@ -202,6 +260,9 @@ p {
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #eee;
+}
+
+#contactList li img:hover {
 }
 
 #contactList button {
@@ -217,24 +278,16 @@ p {
     background-color: #da190b;
 }
 
-/* Estilos para o modal */
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
+
 /* Estilos para o popup */
 .modal {
     position: fixed;
     top: 50%;
     left: 50%;
+    display: flex;
+    justify-content: center;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: #FF5401;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -270,17 +323,130 @@ p {
     background-color: #f44336;
     color: white;
 }
+#contactList li {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    margin: 8px;
+    border: 1px solid #FF5401;
+    border-radius: 7px;
+    position: relative;
+    justify-content: space-between; /* Garante que o botão fique à direita */
+}
 
+#contactList li .contact-info {
+    flex: 2; /* Aumenta a largura do texto do contato */
+    margin-right: 10px; /* Espaçamento entre o texto e o botão de detalhes */
+    overflow: hidden; /* Evita que o texto ultrapasse os limites do item da lista */
+    text-overflow: ellipsis; /* Adiciona reticências se o texto for muito longo */
+    white-space: nowrap; /* Impede que o texto vá para a linha seguinte */
+}
+
+#contactList li button {
+    background-color: #FF5401;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto; /* Alinha o botão à direita */
+}
+
+
+/* Ajusta o estilo da imagem de detalhes */
+#contactList li img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+#contactList li button:hover {
+    background-color: #da190b;
+}
+
+/* Adiciona um estilo ao container da lista */
 #contactList {
     list-style: none;
     padding: 0;
+    width: 500px;
     margin-top: 20px;
 }
 
+/* Alinha o texto e o ícone */
 #contactList li {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+}
+
+/* Adiciona margem para o ícone de detalhes */
+#contactList li img {
+    margin-left: 10px;
+}
+
+.containerList {
+    color: #FF5401;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    max-width: 700px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.containerList h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+
+/* Estilos para o popup de detalhes do contato */
+#contactDetailPopup {
+    position: fixed;
+    color: #ffffff;
+    top: 55%;
+    left: 50%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    background-color: #FF5401;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+#contactDetailPopup h2 {
+    font-size: 32px;
+}
+
+#contactDetailPopup p {
+    margin-bottom: 50px;
+}
+
+#contactDetailPopup button {
+
+    background-color: #eee;
+    color: #da190b;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#successMessage {
+    background-color: #FF5401;
     padding: 10px;
-    border-bottom: 1px solid #eee;
+    color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none; /* Esconde o elemento por padrão */
 }

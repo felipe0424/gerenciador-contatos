@@ -28,10 +28,8 @@
         </div>
     </header>
     <main>
-        <div class="container">
-            <h1>Gerenciador de Contatos</h1>
-            <p>Centralize, organize e acesse seus contatos facilmente!</p>
-            <h2>Lista de Contatos</h2>
+        <div class="containerList">
+            <h1>Lista de Contatos</h1>
             <ul id="contactList"></ul>
         </div>
     </main>
@@ -46,7 +44,17 @@
             <button type="button" id="closePopupButton">Cancelar</button>
         </form>
     </div>
-    
-    <script src="../js/list.js"></script>
+
+<!-- Popup de detalhes do contato -->
+<div id="contactDetailPopup" class="modal hidden">
+    <div class="popup-content">
+        <h2>Nome do Contato</h2>
+        <p>Telefone: <span id="popupPhone"></span></p>
+        <button id="closeDetailPopupButton">Fechar</button>
+    </div>
+</div>
+
+<script src="../js/list.js"></script>
+
 </body>
 </html>
