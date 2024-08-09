@@ -36,10 +36,18 @@ main {
     min-height: 50vh; /* Garante que o conteúdo seja centralizado verticalmente */
 }
 
+footer {
+    text-align: center;
+    padding: 1px 0;
+    background: transparent; /* ou qualquer cor que você preferir */
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin-top: 20px; /* Espaçamento acima do rodapé */
+    border-radius: 0 0 10px 10px; /* Bordas arredondadas apenas no rodapé */
+}
+
 .content {
     display: flex;
-
-
 }
 
 .content button {
